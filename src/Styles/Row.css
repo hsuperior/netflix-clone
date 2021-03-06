@@ -24,3 +24,11 @@
     1.08
   ); /* Notice how the transition property in .row__poster does its thing */
 }
+
+.row__posterLarge {
+  max-height: 250px;
+}
+
+.row__posterLarge:hover {
+  transform: scale(1.09);
+}

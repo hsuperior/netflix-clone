@@ -4,7 +4,7 @@ import "../Styles/Row.css";
 
 const posterBaseUrl = "https://image.tmdb.org/t/p/w500/";
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
   // STATE: This is basically how you write variables in React
   // Think of state as short-term memory
   const [movies, setMovies] = useState([]);
@@ -24,6 +24,7 @@ function Row({ title, fetchUrl }) {
   }, [fetchUrl]);
 
   console.table(movies);
+  console.log("This is a large row: ", isLargeRow);
 
   return (
     <div className="row">
@@ -33,8 +34,10 @@ function Row({ title, fetchUrl }) {
         {movies.map((movie) => (
           <img
             key={movie.id}
-            className="row__poster"
-            src={`${posterBaseUrl}${movie.poster_path}`}
+            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+            src={`${posterBaseUrl}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
             alt={movie.name}
           />
         ))}
