@@ -14,17 +14,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
     // When this row loads, we want something to run. Make a request to TMDB to pull what we need
     // if [], run once when the row loads, and don't run again. We are dependent on the variable(s) in the second parameter
     async function fetchData() {
-      console.log(fetchUrl);
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      //console.log(`${title}:`, movies);
       return request;
     }
     fetchData();
   }, [fetchUrl]);
-
-  console.table(movies);
-  console.log("This is a large row: ", isLargeRow);
 
   return (
     <div className="row">
