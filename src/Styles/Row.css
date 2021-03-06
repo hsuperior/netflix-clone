@@ -1,0 +1,26 @@
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.row__posters::-webkit-scrollbar {
+  /* Don't ever show the scrollbar, BUT keep the functionality */
+  display: none;
+}
+
+.row__poster {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  margin-right: 10px;
+  /* If this changes size at anytime, change at a slower rate*/
+  transition: transform 450ms;
+}
+
+.row__poster:hover {
+  transform: scale(
+    1.08
+  ); /* Notice how the transition property in .row__poster does its thing */
+}
