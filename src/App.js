@@ -1,13 +1,14 @@
 import React from "react";
 import Row from "./Components/Row";
 import Banner from "./Components/Banner";
+import Nav from "./Components/Nav";
 import requests from "./requests";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      {/** Nav */}
+      <Nav />
 
       <Banner />
 
