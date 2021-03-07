@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../axios";
 import requests from "../requests";
+import "../Styles/Banner.css";
 
 const imageBaseUrl = "https://image.tmdb.org/t/p/w500/";
 
