@@ -55,6 +55,9 @@ function Banner() {
           {truncate(movie?.overview, 150)}
         </h1>
       </div>
+      <div className="banner--fadeBottom">
+        {/** This only purpose is so it fades to the bottom: aesthetic purposes only */}
+      </div>
     </header>
   );
 }
