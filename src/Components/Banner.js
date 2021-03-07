@@ -23,6 +23,10 @@ function Banner() {
 
   console.log("Banner Movie: ", movie);
 
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
+
   return (
     <header
       className="banner"
@@ -37,7 +41,7 @@ function Banner() {
       }}
     >
       <div className="banner__contents">
-        <h1>
+        <h1 className="banner__title">
           {/** We do this so this takes care of any edge cases, for example if the API does not give us consistent info */}
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
